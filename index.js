@@ -6,6 +6,10 @@ const cors = require("cors");
 const app = express();
 app.use(cors());
 
+app.get("/", (req, res) => {
+  res.send("서버가 정상적으로 작동 중입니다.");
+});
+
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
