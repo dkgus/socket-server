@@ -24,8 +24,7 @@ router.get("/:provider/callback", (req, res, next) => {
       { expiresIn: "7d" }
     );
 
-    //TODO: 프론트 배포후 url변경하기
-    res.redirect(`http://localhost:3000/auth/callback?token=${token}`);
+    res.redirect(`${process.env.GITHIB_REDIRECT_URL}?token=${token}`);
   })(req, res, next);
 });
 
